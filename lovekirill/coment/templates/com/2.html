@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'main/css/style.css'%}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<meta name="viewport" content="width=device-width">
+	<title>Детский мир</title>
+
+</head>
+
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class='header__container container'>
+				<div class="header__body">
+					<a href="#" class="header__logo">
+						<img  width = '144px' src="{% static 'main/img/logo.svg' %}" alt="Логотип детей">
+					</a>
+					<div class="header__burger">
+						<span></span>
+					</div>
+					<nav class="header__menu menu-header">
+						<ul class="menu-header__list">
+							<li><a href="{%url 'home'%}" class="menu-header__link">Главная</a></li>
+							<li><a href="" class="menu-header__link  black-link">О нас</a></li>
+							<li><a href="{%url 'contact'%}" class="menu-header__link">Контакты</a></li>
+						</ul>
+						<a href="#" class="menu-header__button">Позвонить</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<h2 class="main__title">Главная -> о нас</h2>
+
+			<section class="main__about about">
+				<div class='about__container container'>
+					<div class="about__body">
+						<div class="about__image">
+							<img src="{% static 'main/img/03.jpg' %} " alt="Картинка детского мира">
+						</div>
+						<div class="about__reviews ">
+							<h2 class="about__title">Отзывы</h2>
+							{%if new %}
+								{%for i in new%}
+									<article class="about__review review-about">
+										<div class="review-about__item item-review-about">
+											<h2 class="item-review-about__title">{{i.name}}</h2>
+											<div class="item-review-about__bd"></div>
+											<div class="item-review-about__date">
+												03.09.2014
+											</div>
+											<div class="item-review-about__text">{{i.infa}}</div>
+										</div>
+									</article>
+								{%endfor%}
+							{%else%}
+								<h2>Нету коментариев</h2>
+							{%endif%}
+						</div>
+
+						<button class="about__button popup__link">Написать отзыв</button>
+					</div>
+				</div>
+			</section>
+			<div class="popup">
+				<div class="popup__body">
+					<div class="popup__content">
+						<div class="popup__title">Написать отзыв</div>
+						<div class="popup__close">
+							X
+						</div>
+						<form  method = "post"  class="popup__form form-popup">
+							<input placeholder="Твоё имя" type="text" class="form-popup__title" value="{{id}}">
+							<textarea placeholder="Отзыв" type="text" class="form-popup__text"></textarea>
+						</form>
+						<button id="closePopup" class="about__button popup__link">Написать отзыв</button>
+					</div>
+				</div>
+			</div>
+		<section class="main__icons icons">
+				<div class='icons__container container'>
+				  <div class="icons__body">
+					<h2 class="icons__title">Мы в других соц-сетях</h2>
+					<a target="blank" href="" class="icons_icon">
+					  <img src="{% static 'main/img/01.svg'%}" alt="Тикток">
+					</a>
+					<a href="#" class="icons__icon">
+					  <img src="{% static 'main/img/02.svg'%}" alt="Фасебук">
+					</a>
+					<a href="#" class="icons__icon">
+					  <img src="{% static 'main/img/03.svg'%}" alt="Инста">
+					</a>
+					<a target="_blank" href="https://www.youtube.com/channel/UCNiy2Q7EV3eDv4-h23xJ0OQ"
+					  class="icons__icon">
+					  <img src="{% static 'main/img/04.svg'%}" alt="Ютуб">
+					</a>
+				  </div>
+				</div>
+		</section>
+		
+		</main>
+		<footer class="footer">
+			<div class='footer__container container'>
+				<div class="footer__rules">
+					Все права защищены 2023
+				</div>
+				<div class="footer__copy">
+					2000-2023
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/ibg.js"></script>
+	<script src="js/popup.js"></script>
+	<script src="js/spoller.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script src="{% static 'main/js/script.js' %}"></script>
+
+
+
+</body>
+
+</html>

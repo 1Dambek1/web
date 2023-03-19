@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'main/css/style.css'%}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<meta name="viewport" content="width=device-width">
+	<title>Детский мир</title>
+</head>
+<body>
+    <form method="post" >
+        <form  class="popup__form form-popup">
+            {% csrf_token %}
+            {{form.name}}
+            {{form.infa}}
+            <button type="submit"  class="about__button popup__link">Написать отзыв</button>
+        </form>
+    </form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<meta name="viewport" content="width=device-width">
+	<title>Детский мир</title>
+
+</head>
+
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class='header__container container'>
+				<div class="header__body">
+					<a href="#" class="header__logo">
+						<img width="140px" src="{% static 'main/img/logo.svg' %}" alt="Логотип детей">
+					</a>
+					<div class="header__burger">
+						<span></span>
+					</div>
+					<nav class="header__menu menu-header">
+						<ul class="menu-header__list">
+							<li><a href="{%url 'home'%}" class="menu-header__link">Главная</a></li>
+							<li><a href="{%url 'about'%}" class="menu-header__link  ">О нас</a></li>
+							<li><a href="" class="menu-header__link black-link">Контакты</a></li>
+						</ul>
+						<a href="#" class="menu-header__button">Позвонить</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<h2 class="main__title">Главная -> о нас -> контакты</h2>
+
+			<section class="main__contacts contacts">
+				<div class='contacts__container container'>
+					<div class="contacts__body">
+						<h3 class="contacts__title">Контакты</h3>
+						<div class="contacts__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores,
+							voluptates.</div>
+						<form name="formContacts" action="#" class="contacts__form form-contacts" method="post">
+							<div class="form-contacts__body">
+								<div class="form-contacts__other">
+									<input name="input" placeholder="Имя" type="text" class="form-contacts__name input">
+									<input name="input" placeholder="Телефон" type="tel" class="form-contacts__phone input">
+								</div>
+								<textarea name="input" placeholder="Причина заявки"
+									class="form-contacts__visit input"></textarea>
+							</div>
+							<button type="button" class="form-contacts__button">Отправить</button>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class='footer__container container'>
+				<div class="footer__rules">
+					Все права защищены 2023
+				</div>
+				<div class="footer__copy">
+					2000-2023
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/ibg.js"></script>
+	<script src="js/popup.js"></script>
+	<script src="js/spoller.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script src="{% static 'main/js/script.js' %}"></script>
+</body>
+
+</html>

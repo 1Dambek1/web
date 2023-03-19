@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<meta name="viewport" content="width=device-width">
+	<title>Детский мир</title>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class='header__container container'>
+				<div class="header__body">
+					<a href="#" class="header__logo">
+						<img width='140px' src="{% static 'main/img/logo.svg' %}" alt="Логотип детей">
+					</a>
+					<div class="header__burger">
+						<span></span>
+					</div>
+					<nav class="header__menu menu-header">
+						<ul class="menu-header__list">
+							<li><a href="#" class="menu-header__link black-link">Главная</a></li>
+							<li><a href="about/" class="menu-header__link">О нас</a></li>
+							<li><a href="contact/" class="menu-header__link">Контакты</a></li>
+						</ul>
+						<a href="#" class="menu-header__button">Позвонить</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<h2 class="main__title">Главная</h2>
+			<section class="main__products products">
+				<div class='products__container container'>
+					<div class="products__body">
+						<h2 class="products__title">ТОВАРЫ</h2>
+						<div class="products__columns">
+
+
+									{%if new%}
+										{%for i in new%}
+											<article class="products__column">
+												
+												<div class="products__item item-products">
+													<div class="item-products__body">
+														<div class="item-products__image">
+															<img src="{% static 'main/img/02.jpg' %}" alt="Картинка для детей">
+														</div></br>
+														<h2 class="item-products__title">{{i.title}}</h2>
+														<div class="item-products__text">{{i.infa}}</div>
+														<a href="#" class="item-products__button">
+															Купить
+														</a>
+													</div>
+												</div>
+											</article>
+
+
+										{%endfor%}
+									{%else%}
+										<h1>Нету постов</h1>
+									{%endif%}
+								
+							
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<section class="main__icons icons">
+				<div class='icons__container container'>
+				  <div class="icons__body">
+					<h2 class="icons__title">Мы в других соц-сетях</h2>
+					<a target="blank" href="" class="icons_icon">
+					  <img src="{% static 'main/img/01.svg'%}" alt="Тикток">
+					</a>
+					<a href="#" class="icons__icon">
+					  <img src="{% static 'main/img/02.svg'%}" alt="Фасебук">
+					</a>
+					<a href="#" class="icons__icon">
+					  <img src="{% static 'main/img/03.svg'%}" alt="Инста">
+					</a>
+					<a target="_blank" href="https://www.youtube.com/channel/UCNiy2Q7EV3eDv4-h23xJ0OQ"
+					  class="icons__icon">
+					  <img src="{% static 'main/img/04.svg'%}" alt="Ютуб">
+					</a>
+				  </div>
+				</div>
+		</section>
+		</main>
+		<footer class="footer">
+			<div class='footer__container container'>
+				<div class="footer__rules">
+					Все права защищены 2023
+
+				</div>
+				<div class="footer__copy">
+					2000-2023
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/ibg.js"></script>
+	<script src="js/popup.js"></script>
+	<script src="js/spoller.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script src="{% static 'main/js/script.js' %}"></script>
+</body>
+
+</html>
